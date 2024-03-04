@@ -37,7 +37,6 @@ import { animate, style, transition, trigger } from "@angular/animations";
        ]
 })
 export class AppComponent implements OnInit {
-
        weatherData$: Observable<OpenWeather> | null = null;
        error$: Observable<string> | null = new Observable<string>;
 
