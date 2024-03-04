@@ -44,5 +44,7 @@ Thumbs.db
 # private
 /private.ts
 private.ts
+
+#Dokcer dev
 dev.docker-compose.yml
 dev.Dockerfile
