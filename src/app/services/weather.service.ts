@@ -173,5 +173,4 @@ export class WeatherService {
               this.isLoading.next(false)
               return throwError(() => error)
        }
-
 }
