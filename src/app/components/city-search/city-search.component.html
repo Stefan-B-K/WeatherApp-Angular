@@ -1,0 +1,57 @@
+<div class="top-menu">
+       <div *ngIf="savedCities$ | async as savedCities">
+              <button mat-stroked-button [matMenuTriggerFor]="menu" [disabled]="!savedCities.length">
+                     <mat-icon class="fav-list" color="fav-list">favorite</mat-icon>
+                     <mat-icon class="list" color="list">list</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                     <ng-container *ngFor="let item of savedCities">
+                            <button mat-menu-item (click)="weatherForSavedCity(item)">
+                                   <span>{{ item.city }}, {{item.location.country}}</span>
+                            </button>
+                     </ng-container>
+              </mat-menu>
+       </div>
+
+       <mat-button-toggle-group [value]="units$ | async"
+                                (change)="toggleUnits($event.value)"
+                                name="Units" aria-label="Units">
+              <mat-button-toggle value="metric">°C</mat-button-toggle>
+              <mat-button-toggle value="imperial">°F</mat-button-toggle>
+       </mat-button-toggle-group>
+</div>
+
+<div class="input-container">
+
+       <div class="input-container">
+              <button mat-icon-button
+                      color="fav"
+                      (click)="saveDeleteCityData()"
+                      class="fav-icon"
+                      [disabled]="isShowingInput || !!(error$ | async)?.length || (isLoading$ | async)"
+              >
+                     <mat-icon *ngIf="citySaved()">favorite</mat-icon>
+                     <mat-icon *ngIf="!citySaved()">favorite_border</mat-icon>
+              </button>
+              <input placeholder=" Enter city"
+                     [(ngModel)]="city"
+                     (keyup.enter)="weatherForInputCity()"
+                     class="city-input"
+                     [ngClass]="{'city-label': isShowingInput}"
+                     [disabled]="(isLoading$ | async)! || !isShowingInput">
+       </div>
+
+
+       <div>
+              <button mat-icon-button
+                      (click)="isShowingInput ? weatherForInputCity() : showSearch()"
+                      [disabled]="!city.length"
+                      color="go"
+                      class="button-go">
+                     <mat-icon *ngIf="isShowingInput">arrow_forward_alt</mat-icon>
+                     <mat-icon *ngIf="!isShowingInput">search</mat-icon>
+
+              </button>
+
+       </div>
+</div>

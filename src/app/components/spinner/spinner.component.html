@@ -1,0 +1,19 @@
+<div [style.--colorVar]="color" >
+  <div *ngIf="isLoading$ | async" class="backdrop"></div>
+
+  <div *ngIf="isLoading$ | async" class="spinner spinner-with-backdrop">
+    <div class="lds-roller" >
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+    </div>
+  </div>
+
+</div>
+
+

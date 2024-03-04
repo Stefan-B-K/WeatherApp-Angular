@@ -1,0 +1,37 @@
+<ng-container *ngIf="units$ | async as units">
+
+       <ng-container *ngIf="(screenWidth$ | async)! >= 420; else ngElse">
+
+              <mat-grid-list cols="5" rowHeight="130px" gutterSize="4">
+                     <mat-grid-tile *ngFor="let weather of fiveDayForecast()" style="height:80px">
+
+                            <div style="text-align: center">
+                                   <p class="day center-vert"> {{ time1970toDate(weather.dt) | date : 'E' }} </p>
+                                   <img [src]=" 'https://openweathermap.org/img/wn/' + weather.weather[0].icon + '@2x.png' "
+                                        alt=""
+                                        class="icon-forecast">
+                                   <p class="temp center-vert"> {{ weather.temp.min | number : '1.0-0' }}
+                                          / {{ weather.temp.max | number : '1.0-0' }} {{ temperatureUnits(units) }}</p>
+                            </div>
+
+                     </mat-grid-tile>
+              </mat-grid-list>
+       </ng-container>
+
+       <ng-template #ngElse>
+              <mat-list role="list">
+                     <mat-list-item role="listitem" *ngFor="let weather of fiveDayForecast()" >
+                            <div class="list-item">
+                                   <p class="day spread-hor"> {{ time1970toDate(weather.dt) | date : 'E' }} </p>
+                                   <img [src]=" 'https://openweathermap.org/img/wn/' + weather.weather[0].icon + '@2x.png' "
+                                        alt="" class="icon-forecast-list  spread-hor">
+                                   <p class="temp spread-hor"> {{ weather.temp.min | number : '1.0-0' }}
+                                          / {{ weather.temp.max | number : '1.0-0' }} {{ temperatureUnits(units) }}</p>
+                            </div>
+                     </mat-list-item>
+              </mat-list>
+
+       </ng-template>
+
+</ng-container>
+

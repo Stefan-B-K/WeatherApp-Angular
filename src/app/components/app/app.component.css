@@ -1,0 +1,24 @@
+
+.container,
+.weather-container,
+.forecast-container {
+       display: flex;
+       align-items: center;;
+}
+
+.container,
+.weather-container {
+       flex-flow: column;
+}
+
+.error-message {
+       color: #fadbdb;
+       font-stretch: 200%;
+       font-size: x-large;
+}
+
+.line {
+       border: 1px solid rgba(205, 240, 246, 0.16);
+       width: 100%;
+       margin: 10px 0;
+}

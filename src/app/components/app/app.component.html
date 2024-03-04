@@ -1,0 +1,23 @@
+<div class="container">
+
+       <app-city-search
+              (onGetWeatherForCity)="getWeatherForCity($event)"
+              (onGetWeatherForLocation)="getWeatherDataForLocation($event)"
+              (onClearWeatherData)="clearWeatherData()"
+       />
+
+       <div class="weather-container">
+
+              <ng-container *ngIf="weatherData$ | async as weatherData" >
+                     <app-current-weather [weatherData]="weatherData" @fade/>
+                     <hr class="line" @fade/>
+                     <app-forecast [weatherData]="weatherData" style="width: 400px" @fade />
+              </ng-container>
+
+              <p *ngIf="error$ | async as error" @fade class="error-message"> {{ error | capitalize  }} </p>
+
+       </div>
+
+       <app-spinner color="white"/>
+
+</div>

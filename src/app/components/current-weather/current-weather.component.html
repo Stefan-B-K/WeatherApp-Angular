@@ -1,0 +1,10 @@
+<div class="weather" *ngIf="units$ | async as units">
+	<img [src]=" 'https://openweathermap.org/img/wn/' + weatherData.current.weather[0].icon + '@2x.png' " alt=""
+	     class="icon-forecast">
+	<p class="temp-now"> {{ weatherData.current!.temp | number : '1.0-0' }} {{ temperatureUnits(units) }}</p>
+       <div class="forecast-container">
+              <p class="temp"> {{ weatherData.daily[0].temp.min | number : '1.0-0' }} {{ temperatureUnits(units) }}</p>
+              <p class="temp"> {{ weatherData.daily[0].temp.max | number : '1.0-0' }}  {{ temperatureUnits(units) }}</p>
+       </div>
+	<p class="description"> {{ weatherData.current!.weather[0].description | titlecase }} </p>
+</div>

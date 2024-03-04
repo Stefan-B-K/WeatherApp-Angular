@@ -1,0 +1,48 @@
+
+.weather {
+       display: flex;
+       flex-direction: column;
+       justify-content: left;
+}
+
+.temp, .day, .temp-now, .description {
+       color: white;
+}
+
+.temp, .day {
+       margin: 0;
+       text-align: center;;
+}
+
+.temp {
+       font-weight: normal;
+}
+
+.temp-now {
+       font-weight: normal;
+       font-size: xxx-large;
+}
+
+.description {
+       font-size: large;
+       font-weight: normal;
+       font-stretch: 200%;
+}
+
+.temp-now, .description {
+       margin: 2px;
+       text-align: center;
+}
+
+.icon-forecast {
+       width: 150px;
+       height: 150px;
+       margin: -50px 0 -36px 0;
+}
+
+.forecast-container {
+       display: flex;
+       flex-flow: row;
+       justify-content: space-around;
+       margin: 8px 0;
+}

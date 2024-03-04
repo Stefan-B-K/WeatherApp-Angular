@@ -1,0 +1,113 @@
+.top-menu {
+       display: flex;
+       margin: 20px 4px 0 4px;
+       justify-content: space-around;
+       align-content: start;
+       flex-flow: row;
+}
+
+.input-container {
+       display: flex;
+       align-items: center;
+       flex-flow: row;
+       margin: 10px -6px 10px 10px;
+}
+
+.fav-icon {
+       z-index: 10;
+       margin-right: -38px;
+       transform: scale(0.7);
+}
+
+.city-input {
+       width: 150px;
+       height: 30px;
+       color: white;
+       border: none;
+       margin: 1px 16px 1px 1px;
+       padding-left: 30px;
+       background-color: transparent;
+       font-size: medium;
+}
+
+::placeholder {
+       color: #cceae5;
+       opacity: 1;
+}
+
+input:disabled.city-input {
+       color: white;
+       background-color: transparent;
+}
+
+.city-label {
+       border: solid 1px;
+       margin: 0 14px 0 0;
+}
+
+.mat-button-toggle-group {
+       height: 32px;
+       align-items: center;
+}
+
+.mat-button-toggle {
+       background-color: transparent;
+       color: rgba(255, 255, 255, 0.64);
+}
+
+.mat-button-toggle-checked.mat-button-toggle-checked {
+       background-color: #2896ec;
+       color: white;
+}
+
+.mat-fav {
+       color: #e8c1a8;
+}
+
+.mat-mdc-icon-button[disabled] {
+       color: transparent;
+}
+
+.mat-mdc-outlined-button[disabled] .fav-list,
+.mat-mdc-outlined-button[disabled] .list {
+       color: #a8cfd3;
+}
+
+.mat-go {
+       color: #ffffff;
+       background: rgba(184, 219, 225, 0.14);
+}
+
+button:disabled.mat-go {
+       color: #a8cfd3;
+       background: rgba(198, 229, 234, 0.1);
+}
+
+.button-go {
+       transform: scale(0.7);
+       margin-left: 0;
+}
+
+.fav-list {
+       margin: -10px -20px 0 0;
+       transform: scale(0.6);
+       z-index: 20;
+}
+
+.mat-fav-list {
+       color: white;
+}
+
+.list {
+       margin: 2px 0 0 -20px;
+       padding-right: 0;
+       transform: scale(1.2);
+}
+
+.mat-list {
+       color: white;
+}
+
+.mat-mdc-outlined-button {
+       padding: 0
+}
