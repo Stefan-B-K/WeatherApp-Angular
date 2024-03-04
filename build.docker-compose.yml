@@ -4,7 +4,7 @@ services:
               container_name: weather-app-angular-build
               build:
                      context: .
-                     dockerfile: Dockerfile
+                     dockerfile: build.Dockerfile
               volumes:
                      - /app/node_modules
                      - .:/app

@@ -46,5 +46,7 @@ Thumbs.db
 private.ts
 
 #Dokcer dev
-dev.docker-compose.yml
-dev.Dockerfile
+docker-compose.yml
+Dockerfile
+build.docker-compose.yml
+build.Dockerfile

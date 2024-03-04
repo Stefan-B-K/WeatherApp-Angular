@@ -28,7 +28,7 @@ import { MatMenuModule } from "@angular/material/menu";
 })
 export class CitySearchComponent implements OnInit {
        city: string = ''
-       location:  CityLocation | null = null
+       location: CityLocation | null = null
        isShowingInput = true;
 
        units$ = new Observable<Units>;
@@ -41,14 +41,14 @@ export class CitySearchComponent implements OnInit {
        @Output() onClearWeatherData = new EventEmitter<string>()
 
        constructor (private weather: WeatherService) {
-              this.savedCities$= weather.savedCities$
+              this.savedCities$ = weather.savedCities$
               this.isLoading$ = weather.isLoading$
               this.units$ = weather.units$
               this.weather.location$
                      .subscribe(location => {
                             if (!location) return
                             this.location = location
-                            this.city = this.cityWithCountry(this.city, location!.country)
+                            this.city = this.cityWithCountry(this.city.split(', ')[0], location!.country)
                      })
               this.error$ = this.weather.error$
        }
@@ -57,7 +57,7 @@ export class CitySearchComponent implements OnInit {
               const savedCities = localStorage.getItem('saved-cities')
               if (!!savedCities) {
                      const citiesArray: CityData[] = JSON.parse(savedCities)
-                     if (citiesArray.length === 1)  this.weatherForSavedCity (citiesArray[0])
+                     if (citiesArray.length === 1) this.weatherForSavedCity(citiesArray[0])
               }
        }
 

@@ -64,7 +64,9 @@ export class WeatherService {
 
        constructor (private http: HttpClient) {
               const savedCities = localStorage.getItem('saved-cities')
-              if (!!savedCities) this.savedCities.next(JSON.parse(savedCities))
+              if (!!savedCities) {
+                     this.savedCities.next(JSON.parse(savedCities))
+              }
        }
 
 
@@ -98,6 +100,7 @@ export class WeatherService {
        }
 
        getWeatherForLocation (location: CityLocation): Observable<OpenWeather> {
+              this.location.next(location)
               if (this.error.value.length) return of()
               this.isLoading.next(true)
 
