@@ -48,5 +48,5 @@ private.ts
 #Dokcer dev
 docker-compose.yml
 Dockerfile
-build.docker-compose.yml
-build.Dockerfile
+.docker-build/docker-compose.yml
+.docker-build/build.Dockerfile
