@@ -107,6 +107,4 @@ export class CitySearchComponent implements OnInit {
               let countryName = new Intl.DisplayNames(['en'], { type: 'region' }).of(countryCode)
               return city + ', ' + countryName
        }
-
-
 }
