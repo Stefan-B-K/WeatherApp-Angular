@@ -66,5 +66,4 @@ export class AppComponent implements OnInit {
        onResize (event: Event) {
               this.ui.screenWidthResizedTo(window.innerWidth)
        }
-
 }
